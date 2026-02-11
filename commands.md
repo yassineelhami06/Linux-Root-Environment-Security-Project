@@ -108,3 +108,13 @@ Protect critical system files:
 chattr +i /etc/passwd /etc/shadow /etc/group /etc/sudoers
 ```
 ## 8. Example Commands & Expected Output
+| User   | Command                    | Output / Effect                         |
+| ------ | -------------------------- | --------------------------------------- |
+| user2  | su                         | su: Authentication failure              |
+| user2  | sudo ls                    | user2 is not in the sudoers file        |
+| debian | sudo apt update            | Reading package lists... Done           |
+| debian | sudo bash                  | Not allowed to execute '/bin/bash'      |
+| root   | su -                       | This account is currently not available |
+| root   | ps -u root                 | root processes (systemd, auditd, sshd…) |
+| debian | sudo ausearch -k ROOT_CMDS | All root command executions logged      |
+| debian | sudo cat /var/log/sudo.log | Displays sudo activity                  |
