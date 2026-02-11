@@ -107,3 +107,4 @@ Protect critical system files:
 ```bash
 chattr +i /etc/passwd /etc/shadow /etc/group /etc/sudoers
 ```
+## 8. Example Commands & Expected Output
